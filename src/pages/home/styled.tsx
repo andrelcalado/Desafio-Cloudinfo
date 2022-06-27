@@ -17,6 +17,10 @@ export const Header = styled.header`
   flex-direction: column;
   background-color: ${colors.mainRed};
   z-index: 1000;
+
+  @media (max-width: 500px) {
+    padding: 26px 20px 20px;
+  }
 `;
 
 export const LogoMarvel = styled.img``;
@@ -35,6 +39,10 @@ export const SearchInput = styled.input`
   :focus {
     outline: none;
   }
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 export const MagazinesContainer = styled.section`
@@ -52,4 +60,12 @@ export const Loading = styled.section`
 export const CloudButtonsContainer = styled.footer`
   display: flex;
   justify-content: space-between;
+  
+  @media (max-width: 500px) {
+    flex-direction: column;
+
+    button {
+      width: 100%;
+    }
+  }
 `;
