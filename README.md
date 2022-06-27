@@ -28,9 +28,9 @@ Sistema web desenvolvido em [React.js](https://pt-br.reactjs.org/) com integraç
 
 > 3 - Input e Botões não ficam disponíveis com o Processo de Carregamento;
 
-> 4 - Botões de Navegação ficam desabilitados quando não fazem sentido irem para trás ou para frente;
+> 5 - Quando não encontra nenhum quadrinho, mostra uma mensagem de 'Not Found';
 
-> 5 - Responsividade
+> 6 - Responsividade
 
 
 
