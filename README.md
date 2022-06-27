@@ -30,7 +30,9 @@ Sistema web desenvolvido em [React.js](https://pt-br.reactjs.org/) com integraç
 
 > 5 - Quando não encontra nenhum quadrinho, mostra uma mensagem de 'Not Found';
 
-> 6 - Responsividade
+> 6 - Segurança nas Keys de acesso a API;
+
+> 7 - Responsividade
 
 
 
