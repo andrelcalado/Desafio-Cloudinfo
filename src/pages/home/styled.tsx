@@ -4,7 +4,7 @@ import { colors } from "../../style/colors";
 export const Main = styled.main`
   margin: 0 auto;
   max-width: 1115px;
-  padding: 165px 0 80px;
+  padding: 200px 0 80px;
 `;
 
 export const Header = styled.header`

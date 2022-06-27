@@ -20,7 +20,6 @@ const MagazineCard: React.FC<IProps> = ({ name, thumb, id }) => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onClick={() => toggleFavorite(id)}
-      // onClick={() => setFavorite(!favorite)}
       favorite={favorite}
       thumb={thumb}
     >
