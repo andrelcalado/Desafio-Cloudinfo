@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import marvelLogo from "../../assets/img/marvel_logo.png";
 import { comicsListService } from "../../services/comicsListService";
 import MagazineCard from "../../components/magazineCard";
+import CardInfo from "../../components/cardInfo";
 import Loading from "../../components/loading";
 import CloudButton from "../../components/cloudButton";
 import {
@@ -33,18 +34,12 @@ const Home: React.FC = () => {
     setLoading(true);
     comicsListService.then(({ data }) => {
       setComicsList(data.data.results);
-      console.log(data.data.results);
       setLoading(false);
     });
   }, []);
 
-  useEffect(() => {
-    console.log(currentPage);
-    console.log(comicsList.length / postsPerPage);
-  }, [currentPage])
-  
-
   const searchMagazine = (text: string) => {
+    setCurrentPage(1);
     setComicsFound(
       comicsList.filter((item: any) => {
         return item.title.toUpperCase().includes(text.toUpperCase());
@@ -75,12 +70,18 @@ const Home: React.FC = () => {
                 return (
                   <MagazineCard
                     key={i}
+                    id={item.id}
                     name={item.title}
                     thumb={`${item.thumbnail.path}.${item.thumbnail.extension}`}
                   />
                 );
               })}
             </MagazinesContainer>
+            {currentPosts.length < 1 &&
+              searchLabel.length > 1 &&
+              currentPage === 1 && (
+                <CardInfo label="Não encontramos nenhum quadrinho com o nome informado" />
+              )}
             <CloudButtonsContainer>
               <CloudButton
                 disabled={currentPage === 1}
@@ -88,7 +89,7 @@ const Home: React.FC = () => {
                 label="Previous Page"
               />
               <CloudButton
-                disabled={currentPage > comicsList.length / postsPerPage}
+                disabled={currentPosts.length < postsPerPage}
                 onClick={() => setCurrentPage(currentPage + 1)}
                 label="Next Page"
               />
