@@ -10,7 +10,7 @@ Sistema web desenvolvido em [React.js](https://pt-br.reactjs.org/) com integraç
 1. Clonagem do projeto ```git clone```;
 2. Abra a pasta do projeto com o prompt de comando e execute o comando ```npm install```;
 3. Abra a subpasta do projeto ```./services/```, altere o arquivo ```key copy.ts``` para ```key.ts```.
-4. Abra o arquivo ```key.ts``` com um editor de código e preencha as constantes ```publicKey``` e ```privateKey``` fornecidos por sua conta na [API da Marvel] (https://developer.marvel.com/account);
+4. Abra o arquivo ```key.ts``` com um editor de código e preencha as constantes ```publicKey``` e ```privateKey``` fornecidos por sua conta na [API da Marvel](https://developer.marvel.com/account);
 5. Abra o prompt na pasta raiz do projeto e execute o comando ```npm start```;
 <br>Bingo! :rocket:
 
