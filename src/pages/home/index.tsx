@@ -19,6 +19,16 @@ const Home: React.FC = () => {
   const [searchLabel, setSearchLabel] = useState("");
   const [loading, setLoading] = useState(false);
 
+  // Pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPagesPerPage] = useState(15);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts =
+    searchLabel.length > 1
+      ? comicsFound.slice(indexOfFirstPost, indexOfLastPost)
+      : comicsList.slice(indexOfFirstPost, indexOfLastPost);
+
   useEffect(() => {
     setLoading(true);
     comicsListService.then(({ data }) => {
@@ -27,6 +37,12 @@ const Home: React.FC = () => {
       setLoading(false);
     });
   }, []);
+
+  useEffect(() => {
+    console.log(currentPage);
+    console.log(comicsList.length / postsPerPage);
+  }, [currentPage])
+  
 
   const searchMagazine = (text: string) => {
     setComicsFound(
@@ -55,29 +71,27 @@ const Home: React.FC = () => {
         ) : (
           <>
             <MagazinesContainer>
-              {searchLabel.length > 1
-                ? comicsFound.map((item: any, i) => {
-                    return (
-                      <MagazineCard
-                        key={i}
-                        name={item.title}
-                        thumb={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-                      />
-                    );
-                  })
-                : comicsList.map((item: any, i) => {
-                    return (
-                      <MagazineCard
-                        key={i}
-                        name={item.title}
-                        thumb={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-                      />
-                    );
-                  })}
+              {currentPosts.map((item: any, i) => {
+                return (
+                  <MagazineCard
+                    key={i}
+                    name={item.title}
+                    thumb={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                  />
+                );
+              })}
             </MagazinesContainer>
             <CloudButtonsContainer>
-              <CloudButton label="Previous Page" />
-              <CloudButton label="Next Page" />
+              <CloudButton
+                disabled={currentPage === 1}
+                onClick={() => setCurrentPage(currentPage - 1)}
+                label="Previous Page"
+              />
+              <CloudButton
+                disabled={currentPage > comicsList.length / postsPerPage}
+                onClick={() => setCurrentPage(currentPage + 1)}
+                label="Next Page"
+              />
             </CloudButtonsContainer>
           </>
         )}
