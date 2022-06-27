@@ -1,46 +1,36 @@
-# Getting Started with Create React App
+# Paginação de Revistas em Quadrinhos da Marvel
+Sistema web desenvolvido em [React.js](https://pt-br.reactjs.org/) com integração da [API da Marvel] (https://developer.marvel.com/account) para o processo seletivo na Cloudinfo.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Dependências
+> [Node.js](https://nodejs.org/) para a instação das dependências;
 
-## Available Scripts
+> [React.js](https://pt-br.reactjs.org/docs/getting-started.html) para a execução da aplicação;
 
-In the project directory, you can run:
+## Execução do Projeto
+1. Clonagem do projeto ```git clone```;
+2. Abra a pasta do projeto com o prompt de comando e execute o comando ```npm install```;
+3. Abra a subpasta do projeto ```./services/```, altere o arquivo ```key copy.ts``` para ```key.ts```.
+4. Abra o arquivo ```key.ts``` com um editor de código e preencha as constantes ```publicKey``` e ```privateKey``` fornecidos por sua conta na [API da Marvel] (https://developer.marvel.com/account);
+5. Abra o prompt na pasta raiz do projeto e execute o comando ```npm start```;
+<br>Bingo! :rocket:
 
-### `npm start`
+## Observações
+> 1 - Foi solicitada a listagem de Todas as Capas Lançadas Pela Marvel, porém a própria API limita a quantidade em 100;
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> 2 - Foi solicitada que a listagem fosse da mais recente à mais antiga, porém a API está com alguns dados com datas bugadas, como por exemplo ``-01/01/0001`` dificuldade a identificação e ordenação das datas. A ordem foi pela ``Data de Modificação da Criação``, visto que era o parâmetro com menos dados com problemas;
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+> 3 - Foi solicitada o controle de dados atráves do ``Redux``, mas devido a simplicidade do projeto, foi utilizado o ``UserContext`` que é bem similar ao Redux e possui proposta similares. Foi utilizado o UserContext principalmente para favoritar quadrinhos específicos.;
 
-### `npm test`
+## Implementações Adicionais
+> 1 - Animações em todas as interações;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> 2 - Loading no processo de carregamento dos Quadrinhos;
 
-### `npm run build`
+> 3 - Input e Botões não ficam disponíveis com o Processo de Carregamento;
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> 4 - Botões de Navegação ficam desabilitados quando não fazem sentido irem para trás ou para frente;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> 5 - Responsividade
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
