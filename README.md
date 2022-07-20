@@ -2,8 +2,8 @@
 > Sistema web desenvolvido em [React.js](https://pt-br.reactjs.org/) com integração da [API da Marvel](https://developer.marvel.com/account) para o processo seletivo na Cloudinfo.
 
 <p align="center">
-  <img align="center" width="350" src=".github/main.png">
-  <img align="center" width="350" src=".github/Library _ Loom - 20 July 2022.gif">
+  <img align="center" width="400" src=".github/main.png">
+  <img align="center" width="400" src=".github/main-gif.gif">
 </p>
 
 ## Dependências
