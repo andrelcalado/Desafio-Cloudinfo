@@ -11,6 +11,12 @@
   <img align="center" width="400" src=".github/main-gif.gif">
 </p>
 
+## :rocket: Features
+
+* 📖 Explore the top Marvel's magazines filtered by your last updated.
+* ❤ Favorite your best-loved magazines.
+* 🔎 Search any Marvel's magazines by title.
+
 ## Dependências
 > [Node.js](https://nodejs.org/) para a instação das dependências;
 
