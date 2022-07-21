@@ -1,5 +1,10 @@
-# Paginação de Revistas em Quadrinhos da Marvel
-> Sistema web desenvolvido em [React.js](https://pt-br.reactjs.org/) com integração da [API da Marvel](https://developer.marvel.com/account) para o processo seletivo na Cloudinfo.
+# Marvel's Magazines Pagination
+> Visualize and favorite the mainly [Marvel magazines](https://developer.marvel.com/account)
+
+![Languages](https://img.shields.io/badge/react.js-lightgrey.svg)
+![Languages](https://img.shields.io/badge/typescript-lightgrey.svg)
+![Languages](https://img.shields.io/badge/context_api-lightgrey.svg)
+![Languages](https://img.shields.io/badge/styled_components-lightgrey.svg)
 
 <p align="center">
   <img align="center" width="400" src=".github/main.png">
